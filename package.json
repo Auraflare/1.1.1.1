@@ -1,10 +1,26 @@
 {
-	"name": "cloudflare",
-	"description": "Cloudflare",
+	"name": "@auraflare/1.1.1.1",
+	"organizationName": "☁️ Auraflare",
+	"displayName": "☁️ Cloudflare: 1️⃣ 1.1.1.1",
+	"description": "WARP 检测面板与节点提取",
+	"homepage": "https://Auraflare.github.io",
+	"openUrl": "http://boxjs.com/#/app/Cloudflare.1dot1dot1dot1",
+	"icon": "https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/d3/c5/bb/d3c5bbed-08d4-481c-8585-f7d2e45abd5f/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png",
+	"keywords": [],
+	"contributors": [
+		"VirgilClyne[https://github.com/VirgilClyne]"
+	],
+	"system": [
+		"iOS",
+		"iPadOS",
+		"macOS"
+	],
+	"systemVersion": 15,
+	"license": "Apache-2.0",
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/VirgilClyne/Cloudflare.git"
+		"url": "https://github.com/Auraflare/1.1.1.1.git"
 	},
 	"directories": {
 		"example": "example"
@@ -19,9 +35,6 @@
 	"browserslist": [
 		"iOS >= 15"
 	],
-	"keywords": [],
-	"author": "VirgilClyne",
-	"license": "Apache-2.0",
 	"devDependencies": {
 		"@iringo/arguments-builder": "^1.8.5",
 		"@rspack/cli": "^1.0.14",
