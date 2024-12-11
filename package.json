@@ -1,6 +1,5 @@
 {
 	"name": "cloudflare",
-	"version": "1.0.0",
 	"description": "Cloudflare",
 	"type": "module",
 	"repository": {
@@ -11,8 +10,11 @@
 		"example": "example"
 	},
 	"scripts": {
-		"build": "rollup -c",
-		"test": "rollup --config --configDebug"
+		"serve": "webpack serve",
+		"build": "rspack build",
+		"build:dev": "rspack build -c rspack.dev.config.js --mode=development",
+		"build:args": "arguments-builder build",
+		"dts": "arguments-builder dts"
 	},
 	"browserslist": [
 		"iOS >= 15"
@@ -21,10 +23,14 @@
 	"author": "VirgilClyne",
 	"license": "Apache-2.0",
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^25.0.7",
-		"@rollup/plugin-json": "^6.1.0",
-		"@rollup/plugin-terser": "^0.4.4",
-		"crypto-js": "^4.2.0",
-		"rollup": "^4.9.6"
+		"@iringo/arguments-builder": "^1.8.5",
+		"@rspack/cli": "^1.0.14",
+		"@rspack/core": "^1.0.14",
+		"node-polyfill-webpack-plugin": "^4.0.0",
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"@nsnanocat/util": "^1.7.6",
+		"crypto-js": "^4.2.0"
 	}
 }

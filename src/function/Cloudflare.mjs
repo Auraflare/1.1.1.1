@@ -31,35 +31,35 @@ export default class Cloudflare {
         // Verify Token
         // https://api.cloudflare.com/#user-api-tokens-verify-token
         this.$.log("⚠️ verifyToken: 验证令牌");
-        request.url = this.baseURL + "/user/tokens/verify";
+        request.url = `${this.baseURL}/user/tokens/verify`;
         return await this.fetch(request, this.option);
     }
     async getUser(request) {
         // User Details
         // https://api.cloudflare.com/#user-user-details
         this.$.log("⚠️ getUser: 获取用户信息");
-        request.url = this.baseURL + "/user";
+        request.url = `${this.baseURL}/user`;
         return await this.fetch(request, this.option);
     }
     async getZone(request, Zone) {
         // Zone Details
         // https://api.cloudflare.com/#zone-zone-details
         this.$.log("⚠️ getZone: 获取区域详情");
-        request.url = this.baseURL + `/zones/${Zone.id}`;
+        request.url = `${this.baseURL}/zones/${Zone.id}`;
         return await this.fetch(request, this.option);
     }
     async listZones(request, Zone) {
         // List Zones
         // https://api.cloudflare.com/#zone-list-zones
         this.$.log("⚠️ listZones: 列出区域");
-        request.url = this.baseURL + `/zones?name=${Zone.name}`;
+        request.url = `${this.baseURL}/zones?name=${Zone.name}`;
         return await this.fetch(request, this.option);
     }
     async createDNSRecord(request, Zone, Record) {
         // Create DNS Record
         // https://api.cloudflare.com/#dns-records-for-a-zone-create-dns-record
         this.$.log("⚠️ createDNSRecord: 创建新DNS记录");
-        request.url = this.baseURL + `/zones/${Zone.id}/dns_records`;
+        request.url = `${this.baseURL}/zones/${Zone.id}/dns_records`;
         request.body = Record;
         return await this.fetch(request, this.option);
     }
@@ -67,14 +67,14 @@ export default class Cloudflare {
         // DNS Record Details
         // https://api.cloudflare.com/#dns-records-for-a-zone-dns-record-details
         this.$.log("⚠️ getDNSRecord: 获取DNS记录详情");
-        request.url = this.baseURL + `/zones/${Zone.id}/dns_records/${Record.id}`;
+        request.url = `${this.baseURL}/zones/${Zone.id}/dns_records/${Record.id}`;
         return await this.fetch(request, this.option);
     }
     async listDNSRecords(request, Zone, Record) {
         // List DNS Records
         // https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records
         this.$.log("⚠️ listDNSRecords: 列出DNS记录");
-        request.url = this.baseURL + `/zones/${Zone.id}/dns_records?type=${Record.type}&name=${Record.name}.${Zone.name}&order=type`;
+        request.url = `${this.baseURL}/zones/${Zone.id}/dns_records?type=${Record.type}&name=${Record.name}.${Zone.name}&order=type`;
         return await this.fetch(request, this.option);
     }
     async updateDNSRecord(request, Zone, Record) {
@@ -82,7 +82,7 @@ export default class Cloudflare {
         // https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record
         this.$.log("⚠️ updateDNSRecord: 更新DNS记录");
         request.method = "PUT";
-        request.url = this.baseURL + `/zones/${Zone.id}/dns_records/${Record.id}`;
+        request.url = `${this.baseURL}/zones/${Zone.id}/dns_records/${Record.id}`;
         request.body = Record;
         return await this.fetch(request, this.option);
     }
@@ -102,6 +102,6 @@ export default class Cloudflare {
                 case undefined:
                     return response;
             };
-        }, error => this.$.logErr(`❗️ Cloudflare 执行失败`, ` error = ${error || e}`, ""));
+        }, error => this.$.logErr("❗️ Cloudflare 执行失败", ` error = ${error || e}`, ""));
     };
 }
